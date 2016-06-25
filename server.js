@@ -7,6 +7,8 @@ const path = require('path');
 const PORT = process.env.PORT || 3000;
 const INDEX = path.join(__dirname, 'index.html');
 
+var val = 42
+
 const server = express()
   .use((req, res) => res.sendFile(INDEX) )
   .listen(PORT, () => console.log(`Listening on ${ PORT }`));
@@ -34,3 +36,5 @@ io.on('connection', function(socket){
   });
     
 });
+
+setInterval(() => io.emit('time', val), 1000);
