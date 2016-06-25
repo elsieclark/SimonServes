@@ -1,0 +1,367 @@
+<!doctype html>
+<html>
+<head>
+	<title>Kybernetics</title>
+	
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <style type="text/css">
+    
+		html {
+  			height:100%;
+  			width:100%;
+  			box-sizing:border-box;
+		}
+		
+		*,
+		*:before,
+		*:after {
+  		box-sizing: inherit;
+		}
+
+    	body {
+		  	position:relative;
+		  	margin: 0;
+		  	padding-bottom: 30px;
+		  	min-height:100%;
+		  	font-family: "Trebuchet MS", "Helvetica Neue", Arial, sans-serif;
+		  	color:white;
+            background-color:#002227;
+    	}
+    	
+    	#topbar {
+            width:100%;
+            height:50px;
+            margin:0px 0px 23px 0px;
+    	}
+        
+    	.fixedwidthtop {
+    		width:100%;
+    	    margin:0 auto;
+    	    height:inherit;
+            background-color:#006065;
+    	}
+        
+    	.fixedwidth {
+    		width:100%;
+    		max-width:1000px;
+    		margin:0px auto;
+    		padding:0;
+    		height:100%;
+            background-color:#FFFFFF;
+    	}
+    	
+
+        
+    	#topbarlower {
+            height:60px;
+    	}
+    	
+    	
+    	#sitename {
+  	  	    font-size: 0.7em;
+    		margin:0px auto;
+            width:100%;
+            max-width:1000px;
+            background-color: #006065;
+ 	   	}
+        
+        #sitename a {
+            height:inherit;
+            padding-left:10px;
+        }
+    
+  	  	#sitename img {
+  	  		padding-top:1px;
+    		max-width: calc(100% - 15px);
+            width:425px ;
+
+        }
+        
+        #barlistbg {
+            background-color:#005560;
+            width: 1000px;
+    		max-width:1000px;
+            min-width:525px;
+        }
+        
+        #barlist {
+            padding:0px;
+            margin:0px 0px 0px 0px;
+            width:inherit;
+        }
+
+    	#barlist ul {
+            background-color:#004449;
+            margin:0px 0px 0px 0px;
+            padding:0px 0px 0px 0px;
+            height:0px;
+            width:inherit;
+ 	   	}
+        
+        #barlist ul a{
+            color:white;
+ 	   	}
+
+  	  	#barlist li {
+            width:200px;
+            background-color:#004449;
+            margin:0px 0px 0px 0px;
+            border-right:1px solid #005560;
+            float:left;
+            display: table-cell;
+            text-align: center;
+  	  	}
+  	  	
+  	  	#barlist li:hover {
+ 	   		background-color:#008893;
+  	  	}
+        
+        #barlist p {
+            margin:2px 0px 3px 0px;
+        }
+        
+        #currentpage li {
+            background-color:#FFFFFF;
+            color:#003333;
+            border-right:1px solid #FFFFFF;
+        }
+        #currentpage li:hover {
+            background-color:#FFFFFF;
+            color:#003333;
+            border-right:1px solid #FFFFFF;
+        }
+        #rightmostpage li {
+            border-right:0px solid #004444;
+            width: 200px;
+        }
+  	  	
+  	  	#posts {
+            background-color:#002227;
+  	  		margin:0px;
+  	  		padding:0px;
+  	  		width:100%;
+  	  	}
+  	  	
+  	  	#posts ul {
+  	  		list-style:none;
+  	  		margin:0px 0px 0px 0px;
+  	  		padding:10px 20px 0px 20px;
+  	  		color:black;
+            background-color:#FFFFFF;
+            min-height: calc(100vh - 104px);
+  	  	}
+  	  	
+  	  	#posts li {
+  	  		
+  	  		padding: 5px 20px 5px 20px;
+  	  		border-radius:5px;
+        	opacity:1;
+        	margin:0px 0px 0px 0px;
+  	  	}
+  	  	
+  	  	.lowbar {
+			position:absolute;
+			bottom:0;
+            padding:0px;
+            margin:0 auto;
+			height:30px;
+			background-color:#006065;
+			text-align:left;
+            width:100%;
+  	  	}
+  	  	
+  	  	.lowbar p {
+  	  	    padding: 8px 0px 0px 20px;
+  	  	    font-size: 0.7em;
+    		margin:0px auto;
+            width:100%;
+            max-width:1000px;
+            background-color: #006065;
+            height: 30px;
+  	  	}
+  	  	
+  	  	#allcontent {
+  	  		padding-bottom:0px;
+  	  		margin:0 auto;
+  	  	}
+  	  	
+  	  	
+  	  	.break {
+        	clear:both;
+  	  	}
+  	  	
+  	  	#container {
+  	  		margin:0;
+            padding:0;
+  	  		width:100%;
+  	  	}
+        
+        #lowcentre {
+            width:100%;
+    	    margin:0 auto;
+    	    height:inherit;
+        }
+    
+    </style>
+</head>
+
+
+<body>
+<div id="container">
+    
+    
+	<div id="topbar">
+        
+		<div class="fixedwidthtop">
+			<div id="sitename">
+                <a href="http://kybernetics.ca"><img src="images/Kybernetics Logo 01.png" /></a>
+            </div>
+        </div>
+        
+        <div class="break"></div>
+        
+        <div id="topbarlower">
+            <div class="fixedwidthtop" id="barlistbg">
+                <div id="barlist">
+                    <ul>
+                        <break id="currentpage"><a href=""><li><p>Home</p></li></a></break>
+                        <a href=""><li><p>ARC Controller</p></li></a>
+                        <a href=""><li><p>Pi on the Wall</p></li></a>
+                        <a href=""><li><p>Other Projects</p></li></a>
+                        <break id="rightmostpage"><a href=""><li><p>About Me</p></li></a></break>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+	</div>
+    
+    
+    
+    
+    
+    
+    
+	<div class="break"></div>
+	
+	<div id="posts">
+		<div class="fixedwidth">
+		<ul>
+			<li>
+				<p>
+				Lorem ipsum orci conubia neque class, enim consectetur ligula potenti 
+				luctus sem, consequat condimentum elit ac aenean elementum amet et etiam 
+				aenean nostra, porta pulvinar commodo mauris pharetra aliquam, nam ut lectus 
+				duis ut.
+				<p></p>
+				Amet ipsum rhoncus tortor nisi ac augue vitae duis non fringilla tempus, quis 
+				non ut vitae ac donec mauris tempor placerat porttitor magna viverra, ut elit 
+				dui nulla auctor mattis hendrerit dapibus dui fusce.
+				<p></p>
+				Aenean inceptos condimentum ad sit sodales ullamcorper convallis facilisis 
+				litora eget bibendum, quam lacinia potenti scelerisque nam interdum lacus 
+				molestie per enim.
+				<p></p>
+				Fusce volutpat tincidunt ac libero fames sollicitudin convallis cras taciti, 
+				quisque sagittis per ut ullamcorper ut pellentesque ante, condimentum viverra
+				varius eleifend proin quis hac nullam ac tortor blandit arcu ut leo turpis
+				aliquet litora.
+				<p></p>
+				Ut aliquam nisl proin nibh fames duis ut, donec bibendum interdum lectus 
+				feugiat vitae arcu, class rutrum vulputate netus nunc tincidunt libero 
+				posuere volutpat per vivamus tristique convallis felis donec per placerat 
+				turpis cras scelerisque.</p>
+			</li>
+				
+			<li>
+				<p>
+				Lorem ipsum orci conubia neque class, enim consectetur ligula potenti 
+				luctus sem, consequat condimentum elit ac aenean elementum amet et etiam 
+				aenean nostra, porta pulvinar commodo mauris pharetra aliquam, nam ut lectus 
+				duis ut.
+				<p></p>
+				Amet ipsum rhoncus tortor nisi ac augue vitae duis non fringilla tempus, quis 
+				non ut vitae ac donec mauris tempor placerat porttitor magna viverra, ut elit 
+				dui nulla auctor mattis hendrerit dapibus dui fusce.
+				<p></p>
+				Aenean inceptos condimentum ad sit sodales ullamcorper convallis facilisis 
+				litora eget bibendum, quam lacinia potenti scelerisque nam interdum lacus 
+				molestie per enim.
+				<p></p>
+				Fusce volutpat tincidunt ac libero fames sollicitudin convallis cras taciti, 
+				quisque sagittis per ut ullamcorper ut pellentesque ante, condimentum viverra
+				varius eleifend proin quis hac nullam ac tortor blandit arcu ut leo turpis
+				aliquet litora.
+				<p></p>
+				Ut aliquam nisl proin nibh fames duis ut, donec bibendum interdum lectus 
+				feugiat vitae arcu, class rutrum vulputate netus nunc tincidunt libero 
+				posuere volutpat per vivamus tristique convallis felis donec per placerat 
+				turpis cras scelerisque.</p>
+			</li>
+			<li>
+				<p>
+				Lorem ipsum orci conubia neque class, enim consectetur ligula potenti 
+				luctus sem, consequat condimentum elit ac aenean elementum amet et etiam 
+				aenean nostra, porta pulvinar commodo mauris pharetra aliquam, nam ut lectus 
+				duis ut.
+				<p></p>
+				Amet ipsum rhoncus tortor nisi ac augue vitae duis non fringilla tempus, quis 
+				non ut vitae ac donec mauris tempor placerat porttitor magna viverra, ut elit 
+				dui nulla auctor mattis hendrerit dapibus dui fusce.
+				<p></p>
+				Aenean inceptos condimentum ad sit sodales ullamcorper convallis facilisis 
+				litora eget bibendum, quam lacinia potenti scelerisque nam interdum lacus 
+				molestie per enim.
+				<p></p>
+				Fusce volutpat tincidunt ac libero fames sollicitudin convallis cras taciti, 
+				quisque sagittis per ut ullamcorper ut pellentesque ante, condimentum viverra
+				varius eleifend proin quis hac nullam ac tortor blandit arcu ut leo turpis
+				aliquet litora.
+				<p></p>
+				Ut aliquam nisl proin nibh fames duis ut, donec bibendum interdum lectus 
+				feugiat vitae arcu, class rutrum vulputate netus nunc tincidunt libero 
+				posuere volutpat per vivamus tristique convallis felis donec per placerat 
+				turpis cras scelerisque.</p>
+			</li>
+
+		</ul>
+		</div>
+	</div>
+    <div id="lowcentre">
+        <div class="lowbar">
+            <p>&copy; 2016  - Will Clark</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
