@@ -46,7 +46,9 @@ io.on('connection', function(socket){
     
 });
 
-setInterval(function(){
+var resend = setInterval(function(){
     io.emit('sequenceServerToPhone', piSequence)
     io.emit('sequenceServerToPi', phoneSequence)
 }, 1000);
+
+resend()
