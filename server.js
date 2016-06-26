@@ -7,7 +7,10 @@ const path = require('path');
 const PORT = process.env.PORT || 3000;
 const INDEX = path.join(__dirname, 'index.html');
 
-var val = 42
+var phoneSequence = ""
+var piSequence = ""
+
+var arduinoTurn = false
 
 const server = express()
   .use((req, res) => res.sendFile(INDEX) )
@@ -23,18 +26,27 @@ io.on('connection', function(socket){
     console.log('user disconnected');
   });
     
-  socket.on('chat message', function(msg){
-    console.log('message: ' + msg);
+    
+    
+  socket.on('sequencePhoneToServer', function(msg){
+      if (msg != phoneSequence && !arduinoTurn) {
+          console.log('Phone sequence: ' + msg);
+          phoneSequence = msg;
+      }
   });
     
+});
     
-  socket.on('incrementor', function(msg){
-      if (val != msg) {
-          console.log('Incrementor: ' + msg);
-          val = msg;
+  socket.on('sequencePhoneToServer', function(msg){
+      if (msg != phoneSequence && !arduinoTurn) {
+          console.log('Phone sequence: ' + msg);
+          phoneSequence = msg;
       }
   });
     
 });
 
-setInterval(() => io.emit('time', "[2, 3, 1, 0]"), 10000);
+setInterval(function(){
+    io.emit('sequenceServerToPhone', piSequence)
+    io.emit('sequenceServerToPi', phoneSequence)
+}, 1000);
