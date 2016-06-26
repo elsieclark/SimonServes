@@ -35,8 +35,6 @@ io.on('connection', function(socket){
       }
   });
     
-});
-    
   socket.on('sequencePhoneToServer', function(msg){
       if (msg != phoneSequence && !arduinoTurn) {
           console.log('Phone sequence: ' + msg);
@@ -46,9 +44,8 @@ io.on('connection', function(socket){
     
 });
 
-var resend = setInterval(function(){
+var resendCheck = setInterval(function(){
     io.emit('sequenceServerToPhone', piSequence)
     io.emit('sequenceServerToPi', phoneSequence)
+    console.log("Hello")
 }, 1000);
-
-resend()
