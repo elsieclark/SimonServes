@@ -7,7 +7,7 @@ const path = require('path');
 const PORT = process.env.PORT || 3000;
 const INDEX = path.join(__dirname, 'index.html');
 
-var phoneSequence = ""
+var phoneSequence = "[2, 0, 3, 1]"
 var piSequence = ""
 
 var arduinoTurn = false
@@ -35,10 +35,10 @@ io.on('connection', function(socket){
       }
   });
     
-  socket.on('sequencePhoneToServer', function(msg){
-      if (msg != phoneSequence && !arduinoTurn) {
-          console.log('Phone sequence: ' + msg);
-          phoneSequence = msg;
+  socket.on('sequencePiToServer', function(msg){
+      if (msg != piSequence && arduinoTurn) {
+          console.log('Pi sequence: ' + msg);
+          piSequence = msg;
       }
   });
     
@@ -47,5 +47,5 @@ io.on('connection', function(socket){
 var resendCheck = setInterval(function(){
     io.emit('sequenceServerToPhone', piSequence)
     io.emit('sequenceServerToPi', phoneSequence)
-    console.log("Hello")
+    //console.log("Hello")
 }, 1000);
