@@ -6,14 +6,14 @@
       var socket = io.connect('https://simonserves.herokuapp.com');
       var el = document.getElementById('server-time');
 
-      socket.on('sequencePi', function(dataString) {
+      socket.on('sequenceServerToPi', function(dataString) {
         el.innerHTML = "|" + dataString + "|"
       });
         
         
-      var sendIt = function() {socket.emit('sequencePi, document.getElementById('textinput').value)}
+      //var sendIt = function() {socket.emit('sequencePiToServer, "some text")}
                                            
-    var t=setInterval(sendIt,1000);
+    //var t=setInterval(sendIt,1000);
                                
     </script>
     <input id="textinput" type="text" name="textinput">
