@@ -1,22 +1,11 @@
-'use strict';
+var app = require('express')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+var val = "-1"
 
-const express = require('express');
-const socketIO = require('socket.io');
-const path = require('path');
-
-const PORT = process.env.PORT || 3000;
-const INDEX = path.join(__dirname, 'index.html');
-
-var phoneSequence = "[2, 0, 3, 1]"
-var piSequence = "[2, 0, 3, 1]"
-
-var arduinoTurn = false
-
-const server = express()
-  .use((req, res) => res.sendFile(INDEX) )
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
-
-const io = socketIO(server);
+app.get('/', function(req, res){
+  res.sendfile('index.html');
+});
 
 io.on('connection', function(socket){
     
@@ -25,27 +14,25 @@ io.on('connection', function(socket){
   socket.on('disconnect', function(){
     console.log('user disconnected');
   });
-    /*
-    var resendCheck = setInterval(function(){
-        io.emit('sequencePhone', piSequence)
-        io.emit('sequencePi', "phoneSequence")
-    }, 1000);
-    */
     
-  socket.on('sequencePhone', function(msg){
-      if (msg != phoneSequence && !arduinoTurn) {
-          console.log('Phone sequence: ' + msg);
-          phoneSequence = msg;
-      }
+  socket.on('chat message', function(msg){
+    console.log('message: ' + msg);
   });
     
-  socket.on('sequencePi', function(msg){
-      if (msg != piSequence && arduinoTurn) {
-          console.log('Pi sequence: ' + msg);
-          piSequence = msg;
+    
+  socket.on('incrementor', function(msg){
+      if (val != msg) {
+          console.log('Incrementor: ' + msg);
+          val = msg;
       }
   });
     
 });
 
-setInterval(() => io.emit('sequencePi', "phoneSequence"), 1000);
+http.listen(3000, function(){
+  console.log('listening on *:3000');
+});
+
+// http://[2620:101:f000:700:c9b8:4484:a65d:df7f]:3000/
+
+setInterval(() => io.emit('sequencepi', new Date().toTimeString()), 50);
