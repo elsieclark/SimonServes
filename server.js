@@ -26,6 +26,10 @@ io.on('connection', function(socket){
     console.log('user disconnected');
   });
     
+    var resendCheck = setInterval(function(){
+        io.emit('sequencePhone', piSequence)
+        io.emit('sequencePi', "phoneSequence")
+    }, 1000);
     
     
   socket.on('sequencePhone', function(msg){
@@ -44,8 +48,3 @@ io.on('connection', function(socket){
     
 });
 
-var resendCheck = setInterval(function(){
-    io.emit('sequencePhone', piSequence)
-    io.emit('sequencePi', phoneSequence)
-    console.log(PORT)
-}, 1000);
