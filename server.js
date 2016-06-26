@@ -47,5 +47,5 @@ io.on('connection', function(socket){
 var resendCheck = setInterval(function(){
     io.emit('sequenceServerToPhone', piSequence)
     io.emit('sequenceServerToPi', phoneSequence)
-    console.log(process.env.PORT)
+    console.log(PORT)
 }, 1000);
