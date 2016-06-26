@@ -37,4 +37,4 @@ io.on('connection', function(socket){
     
 });
 
-setInterval(() => io.emit('time', val), 100);
+setInterval(() => io.emit('time', val), 10000);
