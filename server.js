@@ -25,12 +25,12 @@ io.on('connection', function(socket){
   socket.on('disconnect', function(){
     console.log('user disconnected');
   });
-    
+    /*
     var resendCheck = setInterval(function(){
         io.emit('sequencePhone', piSequence)
         io.emit('sequencePi', "phoneSequence")
     }, 1000);
-    
+    */
     
   socket.on('sequencePhone', function(msg){
       if (msg != phoneSequence && !arduinoTurn) {
@@ -48,3 +48,4 @@ io.on('connection', function(socket){
     
 });
 
+setInterval(() => io.emit('sequencePi', "phoneSequence"), 1000);
