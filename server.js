@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 const INDEX = path.join(__dirname, 'index.html');
 
 var phoneSequence = "[2, 0, 3, 1]"
-var piSequence = ""
+var piSequence = "[2, 0, 3, 1]"
 
 var arduinoTurn = false
 
